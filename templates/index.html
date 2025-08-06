@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cartas da Realeza</title>
+  <link rel="stylesheet" href="../static/styles/estilo.css" />
+  <link href='https://fonts.googleapis.com/css?family=Satisfy' rel='stylesheet'>
+</head>
+<body class="pagina-index">
+  <div class="container_titulo_index">
+    <h2>Cartas<br>da<br>Realeza</h2>
+    <div>
+      <button class="botao_index" onclick="window.location.href='inicio.html'">Comece a Jornada</button>
+    </div>
+  </div>
+
+  <div id="glitter-container"></div>
+
+  <script>
+    function createGlitter() {
+      const glitter = document.createElement("div");
+      glitter.classList.add("glitter");
+      glitter.style.left = Math.random() * 100 + "vw";
+      const size = Math.random() * 4 + 2;
+      glitter.style.width = size + "px";
+      glitter.style.height = size + "px";
+      glitter.style.animationDuration = Math.random() * 3 + 2 + "s";
+      document.getElementById("glitter-container").appendChild(glitter);
+      setTimeout(() => glitter.remove(), 5000);
+    }
+    setInterval(createGlitter, 100);
+  </script>
+</body>
+</html>

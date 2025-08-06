@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jogo de Cartas</title>
+  <link rel="stylesheet" href="../static/styles/estilo.css">
+</head>
+<body class="pg-jogo">
+  <div class="computador"></div>
+
+  <div class="area-duelo">
+    <div class="carta-duelo carta-jogador"></div>
+    <div class="versus">VS</div>
+    <div class="carta-duelo carta-computador"></div>
+    <div class="resultado-duelo"></div>
+  </div>
+
+  <div class="mesa"></div>
+  <div class="cartas_jogo"></div>
+  <button class="botao_jogo" id="jogar">Jogar</button>
+  <p class="ponto_jogador">Jogador: <span id="pontos-jogador">0</span></p>
+  <p class="ponto_computador">Computador: <span id="pontos-maquina">0</span></p>
+  <script src="../script/script.js"></script>
+</body>
+</html>

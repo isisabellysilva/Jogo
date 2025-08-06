@@ -1,0 +1,384 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
+
+body {
+    height: 0;
+    margin: 0;
+}
+
+/* pagina index */
+body.pagina-index {
+    background-image: url(/static/img/fundo.jpeg);
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+/* Título */
+.container_titulo_index {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-family: "Dancing Script", cursive;
+    color: #ffe5b6;
+    font-size: 62px;
+    font-weight: 100;
+    letter-spacing: 6px;
+    line-height: 1.1;
+    flex-direction: column;
+    text-shadow: 2px 2px 4px #000;
+    padding: 20px;
+}
+
+/* Botão */
+.botao_index {
+    display: inline-block;
+    background-color: #1d2f65d0;
+    color: #ffe5b6;
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 50px;
+    border: 2px solid #f2cf6d;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    font-family: "Dancing Script", cursive;
+    text-align: center;
+    margin-top: 20px;
+    text-shadow: 2px 2px 4px #000;
+}
+
+.botao_index:hover {
+    transform: translateY(-3px);
+    box-shadow: 7px 7px 7px #f2cf6d;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .container_titulo_index {
+        font-size: 45px;
+        letter-spacing: 3px;
+        padding: 15px;
+    }
+
+    .botao_index {
+        font-size: 1.2rem;
+        padding: 8px 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container_titulo_index {
+        font-size: 32px;
+        letter-spacing: 2px;
+    }
+
+    .botao_index {
+        font-size: 1rem;
+        padding: 6px 14px;
+    }
+}
+
+#glitter-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 9999;
+  overflow: hidden;
+}
+
+.glitter {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: radial-gradient(circle, #fff, #ffc0cb, #ffd700);
+  border-radius: 50%;
+  opacity: 0.8;
+  animation: fall 4s linear infinite;
+}
+
+@keyframes fall {
+  0% {
+    transform: translateY(-10px) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* página INICIO.HTML */
+body.pg-inicio {
+    margin: 0;
+    padding: 0;
+    background-image: url(/static/img/fundo.jpeg);
+    background-size: cover;
+    color: #fff;
+    text-align: center;
+}
+
+h1 {
+    font-size: 60px;
+    color: #fce6c7;
+    margin: 50px 0 30px;
+    font-family: "Dancing Script", cursive;
+    text-shadow: 2px 2px 5px #000;
+}
+
+.cartas {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 20px;
+    flex-wrap: wrap;
+    padding: 0 40px;
+    margin-bottom: 50px;
+}
+
+.cartas img {
+    object-fit: cover;
+    border-radius: 8px;
+    width: 180px;
+    height: 260px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease;
+}
+
+.cartas img:hover {
+    transform: scale(1.08);
+}
+
+a.btn {
+    display: inline-block;
+    padding: 15px 40px;
+    font-size: 22px;
+    font-weight: bold;
+    background-color: #1e2b64;
+    color: #fff;
+    text-decoration: none;
+    border: 2px solid #e8c886;
+    border-radius: 50px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-bottom: 40px;
+}
+
+a.btn:hover {
+    background-color: #2f3b8a;
+    transform: translateY(-3px);
+}
+
+body.pg-jogo {
+    margin: 0;
+    padding: 0;
+    background-image: url(/static/img/salao.png);
+    background-size: cover;
+    color: #fff;
+    text-align: center;
+}
+
+.mesa {
+  width: 850px;
+  height: 476px;
+  background: #fffdec;
+  border-radius: 19px;
+  opacity: 0.5;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+}
+
+.area-duelo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 20;
+  width: 80%;
+  max-width: 600px;
+  height: 300px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.5s ease;
+}
+
+.area-duelo.ativo {
+  opacity: 1;
+  visibility: visible;
+}
+
+.carta-duelo {
+  width: 160px;
+  height: 230px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.7);
+  transition: all 0.5s ease;
+  transform: scale(0);
+  background-size: cover;
+  background-position: center;
+}
+
+.area-duelo.ativo .carta-duelo {
+  transform: scale(1);
+
+}
+
+.carta-jogador {
+  transform-origin: right center;
+  margin-right: 20px;
+}
+
+.carta-computador {
+  transform-origin: left center;
+  margin-left: 20px;
+}
+
+.versus {
+  font-family: "Dancing Script", cursive;
+  font-size: 48px;
+  color: #f2cf6d;
+  text-shadow: 2px 2px 4px #000;
+  margin: 0 15px;
+  transform: scale(0);
+  transition: all 0.5s ease 0.2s;
+}
+
+.area-duelo.ativo .versus {
+  transform: scale(1);
+}
+
+.resultado-duelo {
+  position: absolute;
+  bottom:270px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-family: "Dancing Script", cursive;
+  font-size: 36px;
+  color: #f2cf6d;
+  text-shadow: 2px 2px 4px #000;
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: all 0.5s ease 0.4s;
+}
+
+.area-duelo.ativo .resultado-duelo {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.cartas_jogo {
+  display: flex;
+  gap: 20px;
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  justify-content: center;
+  z-index: 10;
+}
+
+.cartas_jogo img {
+  width: 120px;
+  height: auto;
+  z-index: 1;
+  border-radius: 12px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease;
+  cursor: pointer;
+  object-fit: contain;
+}
+
+.cartas_jogo img:hover {
+  transform: scale(1.08);
+}
+
+.cartas_jogo img.selecionada {
+  transform: translateY(-20px) scale(1.08);
+  box-shadow: 0 12px 20px rgba(242, 207, 109, 0.7);
+  border: 2px solid #f2cf6d;
+}
+
+.computador {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  position: relative;
+  z-index: 1;
+  width: fit-content;
+  margin: 0 auto;
+  height: auto;
+  margin-top: 20px;
+}
+
+.computador img {
+  width: 120px;
+  height: auto;
+  border-radius: 12px;
+}
+
+.ponto_computador {
+  text-align: start;
+  font-weight: bold;
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-family: "Dancing Script", cursive;
+  font-size: 40px;
+  margin-left: 20px;
+}
+
+.ponto_jogador {
+  text-align: start;
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  font-family: "Dancing Script", cursive;
+  font-size: 40px;
+  margin-left: 20px;
+}
+
+.ponto_jogador span,
+.ponto_computador span {
+  display: block;
+  margin: 4px auto 0;
+  text-align: center;
+  width: fit-content;
+}
+
+.botao_jogo {
+  background-color: #1d2f65d0;
+  color: #ffe5b6;
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 10px 20px;
+  border-radius: 50px;
+  border: 2px solid #f2cf6d;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  font-family: "Dancing Script", cursive;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  text-shadow: 2px 2px 4px #000;
+  position: relative;
+  z-index: 1;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
